@@ -5,6 +5,13 @@
 Install the required library:
 
     sudo pip3 install pysword
+    
+To list the bibles to compare, create a text file `config.ini` with the desired bible short codes similar to this:
+
+``` ini
+[default]
+bibles = GerLut1912 ABPGRK TRA TR WHNU
+```
 
 Usage:
 
@@ -21,3 +28,4 @@ Results in:
            TRA: Θεὸν οὐδεὶς ἑώρακε πώποτε· ὁ μονογενὴς υἱὸς, ὁ ὢν εἰς τὸν κόλπον τοῦ πατρὸς, ἐκεῖνος ἐξηγήσατο.
             TR: θεον ουδεις εωρακεν πωποτε ο μονογενης υιος ο ων εις τον κολπον του πατρος εκεινος εξηγησατο
           WHNU: θεον ουδεις εωρακεν πωποτε μονογενης θεος ο ων εις τον κολπον του πατρος εκεινος εξηγησατο
+

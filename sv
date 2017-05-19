@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import re
-import sys
+import configparser
 from pysword.modules import SwordModules
 from argparse import ArgumentParser
 
@@ -9,14 +9,18 @@ parser = ArgumentParser()
 parser.add_argument('book', nargs=1)
 parser.add_argument('chapter', nargs=1, type=int)
 parser.add_argument('verse', nargs=1, type=int)
-
 args = parser.parse_args()
+
 book = args.book[0]
 chapter = args.chapter[0]
 verse = args.verse[0]
 modules = SwordModules()
 found_modules = modules.parse_modules()
-bibles = ['GerLut1912', 'ABPGRK', 'TRA', 'TR', 'WHNU']
+
+config = configparser.ConfigParser()
+config.read('sv.ini')
+bibles = config['default']['bibles'].split()
+
 verses = []
 
 for bible in bibles:
