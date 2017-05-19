@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from os.path import dirname, join, realpath
 import re
 import configparser
 from pysword.modules import SwordModules
@@ -22,7 +23,8 @@ found_modules = modules.parse_modules()
 # only use the ini if no bibles on the cli
 if not bibles:
     config = configparser.ConfigParser()
-    config.read('sv.ini')
+    config_path = join(dirname(realpath(__file__)), 'sv.ini')
+    config.read(config_path)
     bibles = config['default']['bibles'].split()
 
 longest_bible_name = max(bibles, key=len)
