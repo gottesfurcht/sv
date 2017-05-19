@@ -28,7 +28,6 @@ if not bibles:
     bibles = config['default']['bibles'].split()
 
 longest_bible_name = max(bibles, key=len)
-verses = []
 
 for bible in bibles:
     text = modules.get_bible_from_module(bible).get(books=[book], chapters=[chapter], verses=[verse]).strip()
